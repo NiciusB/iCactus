@@ -2,6 +2,10 @@
   font-family: 'Ubuntu';
   src: url('Ubuntu-Regular.ttf');
 }
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+}
 html, body {
     margin:0;
     padding:0;
