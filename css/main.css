@@ -58,10 +58,10 @@ html, body {
     position: absolute;
 }
 #view .cactus {
-    background-position: -10px;
+    background-position-y: -10px;
 }
 #view .flowerpot {
-    background-position: 98px;
+    background-position-y: 98px;
 }
 #humiditymeter {
     text-align: center;
