@@ -40,6 +40,7 @@ Cactus.prototype.computeUpdate=function() {
   this.humidity-=delta*25/7/24/60/60;
   if(this.humidity<0) this.kill();
   else if(this.humidity>200) this.kill();
+  this.age+=delta/24/60/60;
   this.updateUI();
 };
 Cactus.prototype.updateUI=function() {
