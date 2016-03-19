@@ -36,10 +36,10 @@ Cactus.prototype.initialize=function() {
 };
 Cactus.prototype.computeUpdate=function() {
   var delta=Math.floor(new Date()/1000)-this.lastupdated;
-  Cactus.prototype.updateLastUpdated();
+  this.updateLastUpdated();
   this.humidity-=delta*25/7/24/60/60;
   if(this.humidity<0) this.kill();
-  else if(this.humidity>200) this.kill();
+  else if(this.humidity>100) this.kill();
   this.age+=delta/24/60/60;
   this.updateUI();
 };
@@ -63,7 +63,7 @@ Cactus.prototype.updateUI=function() {
     } else {
       this.alive= true;
       this.age= 0;
-      this.humidity= 25;
+      this.humidity= 15;
       this.updateLastUpdated();
       this.updateUI();
       $('#thoughts').html('Watering increases the humidity. Don\'t let it dry, but don\'t drown it. Humidity decreases a little bit each day');
@@ -71,7 +71,7 @@ Cactus.prototype.updateUI=function() {
   } else {
     $('#welcome').stop(true, true).fadeOut(500);
     $('#game').stop(true, true).fadeIn(500);
-    $('#mark>div').css('width', this.humidity/2+'%');
+    $('#mark>div').css('width', this.humidity+'%');
     $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
     $('#view .flowerpot').css('background-image', 'url(img/flowerpots/'+this.flowerpot+'.png)');
     $('#age').html(Math.floor(this.age)+' days');
