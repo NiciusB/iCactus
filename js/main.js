@@ -1,10 +1,8 @@
 var cactus;
 $(function() {
-  cactus = $.jStorage.get('game');
+  cactus = new Cactus();
   var maxcactusid=2, maxflowerpotsid=2;
-  if(cactus==undefined) {
-    cactus=new Cactus();
-  }
+  cactus.load();
   cactus.computeUpdate();
   
   $('#welcome .next, #welcome .previous').click(function(){
@@ -103,6 +101,15 @@ Cactus.prototype.getRandomThought = function() {
   ];
   return thoughts[Math.floor(Math.random()*thoughts.length)];
 };
+Cactus.prototype.getAsData = function() {
+  var retarr={};
+  for(key in this) if(typeof this[key]!="function") retarr[key]=this[key];
+  return retarr;
+};
 Cactus.prototype.save = function() {
-  $.jStorage.set("game", this);
+  $.jStorage.set("game", this.getAsData());
+};
+Cactus.prototype.load = function() {
+  var loaded=$.jStorage.get('game');
+  for(key in loaded) this[key]=loaded[key];
 };
