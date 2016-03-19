@@ -70,7 +70,9 @@ html, body {
 }
 #mark {
     background: url('../img/humiditybar.png') no-repeat 50% 4px;
+    width: 100%;
     height: 18px;
+    position: absolute;
 }
 #thoughts {
     color: #666;
