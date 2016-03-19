@@ -71,7 +71,7 @@ Cactus.prototype.updateUI=function() {
     $('#thoughts').html(cactus.getRandomThought());
   }
 };
-Cactus.prototype.update=function() {
+Cactus.prototype.update = function() {
   var delta=Math.floor(new Date()/1000)-this.lastupdated;
   Cactus.prototype.updateLastUpdated();
   this.humidity-=delta*25/7/24/60/60;
