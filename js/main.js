@@ -35,11 +35,11 @@ $(document).ready(function() {
 });
 var windowResize=function() {
   switch(cactus.cactus) {
-    case 1: hardcodedheight=265; break;
-    case 2: hardcodedheight=330; break;
-    case 3: hardcodedheight=200; break;
+    case 1: var hardcodedheight=265; break;
+    case 2: var hardcodedheight=330; break;
+    case 3: var hardcodedheight=200; break;
   }
-  $('#view .cactus').css('background-position-y', ($('#view .cactus').height()-hardcodedheight)+'px');
+  $('#view .cactus').css('background-position-y', ($(window).height()-hardcodedheight)+'px');
 };
 var Cactus=function() {this.initialize()};
 Cactus.prototype.initialize=function() {
