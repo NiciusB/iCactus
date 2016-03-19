@@ -46,7 +46,7 @@ html, body {
     margin: 0 auto;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-position: 0;
 }
 /* game */
 #view {
@@ -56,6 +56,9 @@ html, body {
 }
 #view .flowerpot, #view .cactus {
     position: absolute;
+}
+#view .flowerpot
+    background-position: 50px;
 }
 #humiditymeter {
     text-align: center;
