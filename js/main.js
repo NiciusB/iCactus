@@ -46,7 +46,7 @@ $(document).ready(function() {
       $('#thoughts').html(cactus.getRandomWateringThought());
 	  for(k=0;k<20;k++) {
 		  var y=Math.random()*40-40;
-		 $('<div class="drop"><i class="fa fa-tint"></i></div>').appendTo('#view').css('left', (Math.random()*38)+'%').css('top', y+'%')
+		 $('<div class="drop"><i class="fa fa-tint"></i></div>').appendTo('#view').css('left', ($(window).width()/2-65+130*Math.random())+'px').css('top', y+'%')
 		 .animate({'top': (150+y)+'%'}, 2000,"linear",function(){$(this).remove();});
 	  }
 	  });

@@ -171,7 +171,7 @@ center {
 }
 .drop {
     position: absolute;
-    margin-left: 29%;
+    left: 29%;
 	color: blue;
 	z-index: 10;
 }
