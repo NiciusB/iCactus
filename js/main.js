@@ -27,7 +27,7 @@ $(function() {
       $('#thoughts').html(cactus.getRandomWateringThought());
   });
   setInterval("cactus.computeUpdate()", 30000);
-  $(window).on('resize', function() {windowResize()});
+  $(window).on('resize', function(e) {windowResize()});
   windowResize();
 });
 var windowResize=function() {
