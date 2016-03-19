@@ -31,7 +31,12 @@ $(document).ready(function() {
   setTimeout("windowResize()", 5);
 });
 var windowResize=function() {
-  $('#view .cactus').css('background-position-y', ($('#view .cactus').height()-$('#view .cactus').width()*0.65)+'px');
+  switch(cactus.cactus) {
+    case 1: hardcodedheight=265; break;
+    case 2: hardcodedheight=330; break;
+    case 3: hardcodedheight=200; break;
+  }
+  $('#view .cactus').css('background-position-y', ($('#view .cactus').height()-hardcodedheight)+'px');
 };
 var Cactus=function() {this.initialize()};
 Cactus.prototype.initialize=function() {
