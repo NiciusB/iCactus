@@ -49,10 +49,11 @@ html, body {
 /* game */
 #view {
     overflow: auto;
+    width: 20em;
+    margin: 0 auto;
 }
 #view .flowerpot, #view .cactus {
-    margin: 0 auto;
-    float: left;
+    position: absolute;
 }
 #humiditymeter {
     text-align: center;
