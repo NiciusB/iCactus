@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget 
+        id          = "ga.thumblife.icactus"
+        version     = "1.0.0" >
+
+    <name>iCactus</name>
+
+    <description>
+        iCactus game
+    </description>
+
+    <author href="https://thumblife.ga" email="support@thumblife.ga">
+        Thumblife 
+    </author>
+    <icon src="icon.png" />
+
+</widget>
