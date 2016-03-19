@@ -27,11 +27,12 @@ $(function() {
       $('#thoughts').html(cactus.getRandomWateringThought());
   });
   setInterval("cactus.computeUpdate()", 30000);
-  $(window).on('resize', function(){
-      $('#view .cactus').css('background-position-y', 'calc(100% - '+($('#view .cactus').width()*0.65)+'px)')
-  });
-  $(window).resize();
+  $(window).on('resize', "windowResize()");
+  windowResize();
 });
+var windowResize=function() {
+  $('#view .cactus').css('background-position-y', 'calc(100% - '+($('#view .cactus').width()*0.65)+'px)');
+};
 var Cactus=function() {this.initialize()};
 Cactus.prototype.initialize=function() {
       this.alive= false;
