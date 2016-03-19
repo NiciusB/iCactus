@@ -134,7 +134,7 @@ Cactus.prototype.getRandomWateringThought = function() {
   'Where can one go to the toilet around here?',
   'HALLELUJAH',
   'I\'m so happy I could die',
-  'I can\'t believe you\'re actually paying attention to me',
+  'Do you treat all cacti like this?',
   'How you dooooin\'?',
   'KEEP IT COMING. <br> Wait, no, don\'t do that',
   ];
