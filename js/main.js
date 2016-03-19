@@ -8,14 +8,14 @@ $(function() {
   cactus.updateUI();
   
   $('#welcome .next, #welcome .previous').click(function(){
-      var ischangingcactus=$(this).parent()==$('#welcomecactus');
+      var ischangingcactus=$(this).parent().is($('#welcomecactus'));
       var thisid=parseInt($(this).parent().find('.preview').attr('data-id'))+1;
       if((ischangingcactus && thisid>maxcactusid) || (!ischangingcactus && thisid>maxflowerpotsid)) thisid=1;
       $(this).parent().find('.preview').attr('data-id', thisid);
       $(this).parent().find('.preview').css('background-image', 'url(img/cactus/'+thisid+'.png)');
   });
   $('#welcome .done').click(function(){
-      var ischangingcactus=$(this).parent().parent()==$('#welcomecactus');
+      var ischangingcactus=$(this).parent().parent().is($('#welcomecactus'));
       var thisid=parseInt($(this).parent().parent().find('.preview').attr('data-id'));
       if(ischangingcactus) cactus.cactus=thisid; else cactus.flowerpot=thisid;
       cactus.updateUI();
