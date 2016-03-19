@@ -9,6 +9,8 @@ html, body {
 }
 #welcome, #body, #welcomecactus, #welcomeflowerpot {
     display: none;
+    position: absolute;
+    top:0;left:0;
 }
 .title {
     width: 100%;
