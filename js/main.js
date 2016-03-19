@@ -46,16 +46,16 @@ Cactus.prototype.computeUpdate=function() {
 Cactus.prototype.updateUI=function() {
   this.save();
   if(!this.alive) {
-    $('#welcome').fadeIn(500);
-    $('#game').fadeOut(500);
+    $('#welcome').stop(true, true).fadeIn(500);
+    $('#game').stop(true, true).fadeOut(500);
     if(this.cactus==-1) {
-      $('#welcome>div').fadeOut(500);
+      $('#welcome>div').stop(true, true).fadeOut(500);
       $('#welcome #welcomecactus').fadeIn(500);
       $('#welcome #welcomecactus .title').html('Select your cactus!');
       $('#welcome #welcomecactus .preview').css('background-image', 'url(img/cactus/1.png)');
       $('#welcome #welcomecactus .preview').attr('data-id', '1');
     } else if(this.flowerpot==-1) {
-      $('#welcome>div').fadeOut(500);
+      $('#welcome>div').stop(true, true).fadeOut(500);
       $('#welcome #welcomeflowerpot').fadeIn(500);
       $('#welcome #welcomeflowerpot .title').html('Select your flower pot!');
       $('#welcome #welcomeflowerpot .preview').css('background-image', 'url(img/cactus/1.png)');
@@ -69,8 +69,8 @@ Cactus.prototype.updateUI=function() {
       $('#thoughts').html('Watering increases the humidity. Don\'t let it dry, but don\'t drown it. Humidity decreases a little bit each day');
     }
   } else {
-    $('#welcome').fadeOut(500);
-    $('#game').fadeIn(500);
+    $('#welcome').stop(true, true).fadeOut(500);
+    $('#game').stop(true, true).fadeIn(500);
     $('#humiditymeter .mark').html(Math.round(this.humidity*100)/100+'%');
     $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
     $('#view .flowerpot').css('background-image', 'url(img/flowerpot/'+this.flowerpot+'.png)');
