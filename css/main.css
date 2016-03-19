@@ -19,17 +19,23 @@ html, body {
     cursor: pointer;
 }
 .previous {
-    float: left;
+    position: absolute;
+    left: 0;
+    top: 13em;
 }
 .next {
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 13em;
 }
 .done {
     font-size: 2em;
     text-align: center;
+    margin-top: 10px;
 }
 .preview {
     width: 20em;
     height: 20em;
+    margin: 0 auto;
     background-size: cover;
 }
