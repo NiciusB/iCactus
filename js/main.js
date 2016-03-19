@@ -28,6 +28,7 @@ $(document).ready(function() {
   });
   setInterval("cactus.computeUpdate()", 30000);
   $(window).on('resize', function(e) {windowResize()});
+  windowResize();
 });
 var windowResize=function() {
   switch(cactus.cactus) {
