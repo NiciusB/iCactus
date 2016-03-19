@@ -1,5 +1,6 @@
+var cactus;
 $(function() {
-  var cactus = $.jStorage.get('game');
+  cactus = $.jStorage.get('game');
   var maxcactusid=2, maxflowerpotsid=2;
   if(cactus==undefined) {
     cactus=new Cactus();
