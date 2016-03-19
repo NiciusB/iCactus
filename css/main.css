@@ -13,7 +13,7 @@ html, body {
     font-family: 'Ubuntu', sans-serif;
 }
 /* welcome */
-#welcome, #body, #welcomecactus, #welcomeflowerpot {
+#welcome, #game, #welcomecactus, #welcomeflowerpot {
     display: none;
     position: absolute;
     top:0;
