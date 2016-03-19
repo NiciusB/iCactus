@@ -11,20 +11,10 @@ html, body {
     margin:0;
     padding:0;
     color: #222;
-    background: #EEE url('../img/background.png') no-repeat 50% 100%;
-    background-size: cover;
+    background: #EEE;
     font-family: 'Ubuntu', sans-serif;
 }
 /* welcome */
-#welcome, #game, #welcomecactus, #welcomeflowerpot {
-    display: none;
-    position: absolute;
-    top:0;
-    left:0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
 .title {
     width: 100%;
     text-align: center;
@@ -53,6 +43,15 @@ center {
     width: 100%;
 }
 /* mixed */
+#welcome, #game, #welcomecactus, #welcomeflowerpot {
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
 .preview {
     background-position-y: 50%;
     position: absolute;
@@ -69,6 +68,10 @@ center {
     background-position-x: 50%;
 }
 /* game */
+#game {
+    background: #EEE url('../img/background.png') no-repeat 50% 100%;
+    background-size: cover;
+}
 #view {
     overflow: auto;
     width: 70%;
