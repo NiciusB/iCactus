@@ -1,5 +1,5 @@
 var cactus;
-$(function() {
+$(document).ready(function() {
   cactus = new Cactus();
   var maxcactusid=3, maxflowerpotsid=3;
   cactus.load();
@@ -28,7 +28,7 @@ $(function() {
   });
   setInterval("cactus.computeUpdate()", 30000);
   $(window).on('resize', function(e) {windowResize()});
-  windowResize();
+  setTimeout("windowResize()", 5);
 });
 var windowResize=function() {
   $('#view .cactus').css('background-position-y', 'calc(100% - '+($('#view .cactus').width()*0.65)+'px)');
