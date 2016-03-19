@@ -30,7 +30,8 @@ $(function() {
       $('#view').fadeOut(200, function() { $(this).fadeIn(200); });
   });
 });
-var Cactus=function() {
+var Cactus=function() {this.initialize()};
+Cactus.prototype.initialize=function() {
       this.alive= false;
       this.cactus= -1;
       this.flowerpot= -1;
@@ -79,7 +80,7 @@ Cactus.prototype.update=function() {
   this.updateUI();
 };
 Cactus.prototype.kill = function() {
-  this= new Cactus();
+  this.initialize();
   this.updateUI();
 };
 Cactus.prototype.updateLastUpdated = function() {
