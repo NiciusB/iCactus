@@ -25,7 +25,6 @@ $(function() {
       cactus.humidity+=25;
       cactus.computeUpdate();
       $('#thoughts').html(cactus.getRandomWateringThought());
-      $('#view').fadeOut(200, function() { $(this).fadeIn(200); });
   });
   setInterval(cactus.computeUpdate, 1000);
 });
