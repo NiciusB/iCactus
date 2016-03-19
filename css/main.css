@@ -1,5 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,700);
-
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('ubuntu.ttf');
+}
 html, body {
     margin:0;
     padding:0;
