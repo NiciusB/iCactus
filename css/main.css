@@ -6,10 +6,13 @@
   -webkit-tap-highlight-color: transparent;
 }
 html, body {
+    height: 100%;
+    width: 100%;
     margin:0;
     padding:0;
     color: #222;
-    background: #EEE;
+    background: #EEE url('../img/background.png') no-repeat 50% 100%;
+    background-size: cover;
     font-family: 'Ubuntu', sans-serif;
 }
 /* welcome */
@@ -20,6 +23,7 @@ html, body {
     left:0;
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 .title {
     width: 100%;
@@ -42,18 +46,25 @@ html, body {
 .done {
     font-size: 2em;
     text-align: center;
-    margin-top: 10px;
+}
+center {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
 }
 /* mixed */
 .preview {
     background-position-y: 50%;
+    position: absolute;
+}
+.preview.aux {
+	margin-left: 100%;
 }
 .preview, #view .flowerpot, #view .cactus {
-    width: 70%;
-    max-width: 180px;
-    height: 50%;
     margin: 0 auto;
-    background-size: contain;
+	margin-left: 15%;
+    width: 70%;
+    height: 50%;
     background-repeat: no-repeat;
     background-position-x: 50%;
 }
@@ -61,8 +72,6 @@ html, body {
 #view {
     overflow: auto;
     width: 70%;
-    max-width: 180px;
-    margin: 0 auto;
 }
 #view .flowerpot, #view .cactus {
     position: absolute;
@@ -89,6 +98,7 @@ html, body {
 #mark>div {
     background: url('../img/humiditybar.png') no-repeat 50% 4px;
     height: 21px;
+	width: 0%;
 }
 #thoughts {
     color: #666;

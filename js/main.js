@@ -1,4 +1,4 @@
-var cactus;
+var cactus, welcomePreviewMoving=false;
 $(document).ready(function() {
   cactus = new Cactus();
   var maxcactusid=3, maxflowerpotsid=3;
@@ -6,14 +6,30 @@ $(document).ready(function() {
   cactus.computeUpdate();
   
   $('#welcome .next, #welcome .previous').click(function(){
-      var ischangingcactus=$(this).parent().is($('#welcomecactus'));
-      var thisid=parseInt($(this).parent().find('.preview').attr('data-id'))+1;
-      if((ischangingcactus && thisid>maxcactusid) || (!ischangingcactus && thisid>maxflowerpotsid)) thisid=1;
-      $(this).parent().find('.preview').attr('data-id', thisid);
-      if(ischangingcactus)
-      $(this).parent().find('.preview').css('background-image', 'url(img/cactus/'+thisid+'.png)');
-      else
-      $(this).parent().find('.preview').css('background-image', 'url(img/flowerpots/'+thisid+'.png)');
+	  if(!welcomePreviewMoving) {
+		  welcomePreviewMoving=true;
+		  var ischangingcactus=$(this).parent().is($('#welcomecactus'));
+		  if($(this).is($('#welcome .previous'))) var moving=-1; else var moving=1;
+		  var thisid=parseInt($(this).parent().find('.preview').attr('data-id'))+moving;
+		  if((ischangingcactus && thisid>maxcactusid) || (!ischangingcactus && thisid>maxflowerpotsid)) thisid=1;
+		  if(thisid<1) if(ischangingcactus) thisid=maxcactusid; else thisid=maxflowerpotsid;
+		  $(this).parent().find('.preview').attr('data-id', thisid);
+		  if(ischangingcactus) var imgurl='cactus'; else var imgurl='flowerpots';
+		  
+		  $(this).parent().find('.preview.aux').css('margin-left', (moving*100)+'%').css('background-image', 'url(img/'+imgurl+'/'+thisid+'.png)');
+		  $(this).parent().find('.preview.aux').animate({
+			  "margin-left": '15%',
+		  }, 500);
+		  $(this).parent().find('.preview.main').animate({
+			  "margin-left": (moving==1 ? -200 : 400)+'px',
+		  }, 500);
+		  setTimeout(function(that, imgurl, thisid) {
+			that.find('.preview.main').css('background-image', 'url(img/'+imgurl+'/'+thisid+'.png)').css('margin-left', '15%');
+			that.find('.preview.aux').css('margin-left', '100%');
+			welcomePreviewMoving=false;
+			that.find('.title').html(cactus.getRandomTitle(that.is($('#welcomecactus'))));
+		  }, 500+50, $(this).parent(), imgurl, thisid);
+	  }
   });
   $('#welcome .done').click(function(){
       var ischangingcactus=$(this).parent().parent().is($('#welcomecactus'));
@@ -35,9 +51,9 @@ $(document).ready(function() {
 });
 var windowResize=function() {
   switch(cactus.cactus) {
-    case 1: var hardcodedheight=265; break;
-    case 2: var hardcodedheight=330; break;
-    case 3: var hardcodedheight=200; break;
+    case 1: var hardcodedheight=260; break;
+    case 2: var hardcodedheight=323; break;
+    case 3: var hardcodedheight=193; break;
   }
   $('#view .cactus').css('background-position-y', ($(window).height()-hardcodedheight)+'px');
 };
@@ -84,7 +100,7 @@ Cactus.prototype.updateUI=function() {
   } else {
     $('#welcome').stop(true, true).fadeOut(500);
     $('#game').stop(true, true).fadeIn(500);
-    $('#mark>div').css('width', this.humidity+'%');
+    $('#mark>div').animate({'width': this.humidity+'%'}, 750);
     $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
     $('#view .flowerpot').css('background-image', 'url(img/flowerpots/'+this.flowerpot+'.png)');
     $('#age').html('Age: '+Math.floor(this.age)+' days');
@@ -114,6 +130,14 @@ Cactus.prototype.getRandomThought = function() {
   'Thug life yo'
   ];
   return thoughts[Math.floor(Math.random()*thoughts.length)];
+};
+Cactus.prototype.getRandomTitle=function() {
+  var titles=[
+  'Ooooh, that looks sharp!',
+  'It\'s crafted with love!',
+  'Doesn\'t do much, does it?'
+  ];
+  return titles[Math.floor(Math.random()*titles.length)];
 };
 Cactus.prototype.getAsData = function() {
   var retarr={};
