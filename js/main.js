@@ -87,7 +87,7 @@ Cactus.prototype.updateUI=function() {
     $('#mark>div').css('width', this.humidity+'%');
     $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
     $('#view .flowerpot').css('background-image', 'url(img/flowerpots/'+this.flowerpot+'.png)');
-    $('#age').html(Math.floor(this.age)+' days');
+    $('#age').html('Age: '+Math.floor(this.age)+' days');
     $('#thoughts').html(cactus.getRandomThought());
   }
 };
