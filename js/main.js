@@ -12,13 +12,22 @@ $(function() {
       var thisid=parseInt($(this).parent().find('.preview').attr('data-id'))+1;
       if((ischangingcactus && thisid>maxcactusid) || (!ischangingcactus && thisid>maxflowerpotsid)) thisid=1;
       $(this).parent().find('.preview').attr('data-id', thisid);
+      if(ischangingcactus)
       $(this).parent().find('.preview').css('background-image', 'url(img/cactus/'+thisid+'.png)');
+      else
+      $(this).parent().find('.preview').css('background-image', 'url(img/flowerpot/'+thisid+'.png)');
   });
   $('#welcome .done').click(function(){
       var ischangingcactus=$(this).parent().parent().is($('#welcomecactus'));
       var thisid=parseInt($(this).parent().parent().find('.preview').attr('data-id'));
       if(ischangingcactus) cactus.cactus=thisid; else cactus.flowerpot=thisid;
       cactus.updateUI();
+  });
+  $('#view').click(function(){
+      cactus.humidity+=25;
+      cactus.updateUI();
+      $('#thoughts').html(cactus.getRandomWateringThought());
+      $('#view').fadeOut(200, function() { $(this).fadeIn(200); });
   });
 });
 var Cactus=function() {
@@ -48,15 +57,16 @@ Cactus.prototype.updateUI=function() {
       this.humidity= 25;
       this.updateLastUpdated();
       this.updateUI();
+      $('#thoughts').html('Watering increases the humidity. Don\'t let it dry, but don\'t drown it. Humidity decreases a little bit each day');
     }
   } else {
     $('#welcome').fadeOut(500);
     $('#game').fadeIn(500);
-    $('#humiditymeter .mark').html(this.humidity);
+    $('#humiditymeter .mark').html(this.humidity+'%');
     $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
-    $('#view .flowerpot').css('background-image', 'url(img/cactus/'+this.flowerpot+'.png)');
+    $('#view .flowerpot').css('background-image', 'url(img/flowerpot/'+this.flowerpot+'.png)');
     $('#age').html(this.age+' days');
-    
+    $('#thoughts').html(cactus.getRandomThought());
   }
 };
 Cactus.prototype.updateLastUpdated = function() {
@@ -64,4 +74,22 @@ Cactus.prototype.updateLastUpdated = function() {
 };
 Cactus.prototype.save = function() {
   $.jStorage.set("game", this);
+};
+Cactus.prototype.getRandomWateringThought = function() {
+  var thoughts=[
+  'yay yay yay',
+  'yaayyy',
+  ':D',
+  'hehehe!!!'
+  ];
+  return thoughts[Math.floor(Math.random()*thoughts.length)];
+};
+
+Cactus.prototype.getRandomThought = function() {
+  var thoughts=[
+  'I liek trains',
+  'BIG THINGS',
+  'Thug life yo'
+  ];
+  return thoughts[Math.floor(Math.random()*thoughts.length)];
 };
