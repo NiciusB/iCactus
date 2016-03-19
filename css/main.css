@@ -144,8 +144,9 @@ center {
 	text-align: right;
 	padding: 24px 6px 0px 27px;
 	max-width: 202px;
-	right: 10px;
+    min-width: 125px;
 	width: 40%;
+	right: 10px;
 	bottom: 240px;
 	z-index: 8;
 }
