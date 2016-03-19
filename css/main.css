@@ -47,6 +47,15 @@ html, body {
     background-size: cover;
 }
 /* game */
+#view {
+    position: relative;
+    width: 100%;
+    height: 20em;
+}
+#view .flowerpot, #view .cactus {
+    position: absolute;
+    margin: 0 auto;
+}
 #humiditymeter {
     text-align: center;
     font-size: 2em;
