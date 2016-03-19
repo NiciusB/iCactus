@@ -26,7 +26,7 @@ $(function() {
       cactus.computeUpdate();
       $('#thoughts').html(cactus.getRandomWateringThought());
   });
-  setInterval("cactus.computeUpdate()", 1000);
+  setInterval("cactus.computeUpdate()", 30000);
 });
 var Cactus=function() {this.initialize()};
 Cactus.prototype.initialize=function() {
@@ -49,14 +49,14 @@ Cactus.prototype.updateUI=function() {
     $('#welcome').stop(true, true).fadeIn(500);
     $('#game').stop(true, true).fadeOut(500);
     if(this.cactus==-1) {
-      $('#welcome>div').stop(true, true).fadeOut(500);
-      $('#welcome #welcomecactus').fadeIn(500);
+      $('#welcome #welcomeflowerpot').stop(true, true).fadeOut(500);
+      $('#welcome #welcomecactus').stop(true, true).fadeIn(500);
       $('#welcome #welcomecactus .title').html('Select your cactus!');
       $('#welcome #welcomecactus .preview').css('background-image', 'url(img/cactus/1.png)');
       $('#welcome #welcomecactus .preview').attr('data-id', '1');
     } else if(this.flowerpot==-1) {
-      $('#welcome>div').stop(true, true).fadeOut(500);
-      $('#welcome #welcomeflowerpot').fadeIn(500);
+      $('#welcome #welcomecactus').stop(true, true).fadeOut(500);
+      $('#welcome #welcomeflowerpot').stop(true, true).fadeIn(500);
       $('#welcome #welcomeflowerpot .title').html('Select your flower pot!');
       $('#welcome #welcomeflowerpot .preview').css('background-image', 'url(img/flowerpots/1.png)');
       $('#welcome #welcomeflowerpot .preview').attr('data-id', '1');
