@@ -65,7 +65,7 @@ var windowResize=function() {
   }
   $('#view .cactus').css('background-position-y', ($(window).height()-hardcodedheight)+'px');
   var rightpos=($(window).width()/2-300);
-  if(rigtpos<0) rightpos=0;
+  if(rightpos<0) rightpos=0;
   $('#thoughtsarea').css('right', rightpos+'px');
 };
 var Cactus=function() {this.initialize()};
