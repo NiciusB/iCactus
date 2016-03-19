@@ -71,7 +71,7 @@ Cactus.prototype.updateUI=function() {
   } else {
     $('#welcome').stop(true, true).fadeOut(500);
     $('#game').stop(true, true).fadeIn(500);
-    $('#mark').css('background-position-x', this.humidity/200+'%');
+    $('#mark>div').css('width', this.humidity/200+'%');
     $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
     $('#view .flowerpot').css('background-image', 'url(img/flowerpots/'+this.flowerpot+'.png)');
     $('#age').html(Math.floor(this.age)+' days');
