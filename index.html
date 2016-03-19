@@ -15,8 +15,8 @@
     </head>
     <body>
     <div id="main">
-        <div id="welcome">
-            <div id="welcomecactus">
+        <div id="welcome" class="fullscreen">
+            <div id="welcomecactus" class="fullscreen">
                 <div class="title"></div>
                 <div class="preview main"></div>
                 <div class="preview aux"></div>
@@ -24,7 +24,7 @@
                 <div class="next"><i class="fa fa-arrow-right fa-3x"></i></div>
                 <center><span class="done">Done!</span></center>
             </div>
-            <div id="welcomeflowerpot">
+            <div id="welcomeflowerpot" class="fullscreen">
                 <div class="title"></div>
                 <div class="preview main"></div>
                 <div class="preview aux"></div>
@@ -33,25 +33,33 @@
                 <center><span class="done">Done!</span></center>
             </div>
         </div>
-        <div id="game">
-            <div id="view">
+        <div id="game" class="fullscreen">
+            <div id="view"><div>
                 <div class="cactus"></div>
                 <div class="flowerpot"></div>
-            </div>
-            <div id="mark"><div></div></div>
-            <div id="humiditymeter"></div>
+                <div class="accesories"></div>
+            </div></div>
+			<div id="humidity">
+				<div id="mark"><div></div></div>
+				<div id="humiditymeter"></div>
+			</div>
 			<div id="thoughtsarea">
 				  <div>
 					  <p id="thoughts"></p>
 				  </div>
 			</div>
             <div id="age"></div>
-			<div id="tipsarea">
-				  <div>
-					  <p id="tips"></p>
-				  </div>
-			</div>
+            <div id="button_accesories"><i class="fa fa-gift fa-2x"></i></div>
         </div>
+		<div id="accesories" class="fullscreen">
+			  <div></div>
+              <center><span class="done">Done!</span></center>
+		</div>
+		<div id="fullscreenmessage" class="fullscreen">
+			  <div>
+				  <p></p>
+			  </div>
+		</div>
     </div>
         <script src="js/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
