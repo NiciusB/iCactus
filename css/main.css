@@ -13,7 +13,6 @@ html, body {
     color: #222;
     background: #EEE;
     font-family: 'Sniglet', sans-serif;
-	overflow: hidden;
 }
 /* welcome */
 .title {
@@ -62,7 +61,8 @@ center {
 .fullscreen { 
 	width: 100%;
 	height: 100%;
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
     top: 0;
     left: 0;
 	display: none;
@@ -112,8 +112,14 @@ center {
     bottom: 0;
     position: absolute;
 }
+#view .accesories {
+    z-index: 12;
+    width: 100%;
+    overflow: hidden;
+    bottom: 0;
+    position: absolute;
+}
 #view .accesories>div {
-	z-index: 12;
     height: 100%;
     width: 100%;
     position: absolute;

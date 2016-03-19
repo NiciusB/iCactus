@@ -3,9 +3,9 @@ var wiki={
 	cactus: [144, 155, 69],
 	flowerpots: [58, 58, 58],
 	accesories: {
-		extras: [[-50, 130]],
-		hats: [[-20, 54], [-54, 54], [-40, 54], [-40, 8]],
-		glasses: [[20,40], [20,50], [20,40], [40, 51]],
+		extras: [[130, 50]],
+		hats: [[54, 80], [54, 46], [54, 60], [8, 60]],
+		glasses: [[50, 120], [50, 120], [40, 120], [51, 140]],
 	}
 };
 $(document).ready(function() {
@@ -124,7 +124,7 @@ Cactus.prototype.updateUI=function() {
     $('#view .flowerpot').css('background-image', 'url(img/flowerpots/'+this.flowerpot+'.png)');
     $('#view .accesories').html('');
 	for(key in this.accesories) {
-		if(this.accesories[key]>0)$('#view .accesories').append('<div class="'+key+'" style="top:'+wiki.accesories[key][this.accesories[key]-1][0]+'px;left:'+wiki.accesories[key][this.accesories[key]-1][1]+'px;background-image: url(\'img/accesories/'+key+'/'+this.accesories[key]+'.png\');"></div>');
+		if(this.accesories[key]>0)$('#view .accesories').append('<div class="'+key+'" style="left:'+wiki.accesories[key][this.accesories[key]-1][0]+'px;top:'+wiki.accesories[key][this.accesories[key]-1][1]+'px;background-image: url(\'img/accesories/'+key+'/'+this.accesories[key]+'.png\');"></div>');
 	}
     $('#age').html('Age: '+(Math.floor(this.age*10)/10)+' days');
 	this.setThought(cactus.getRandomThought());
@@ -226,9 +226,10 @@ Cactus.prototype.hideAccesoriesMenu = function() {
 
 var windowResize=function() {
   var cactusheight=wiki.cactus[cactus.cactus-1];
-  $('#view').css('height', (cactusheight+125)+'px');
+  $('#view').css('height', (cactusheight+123)+'px');
   $('#view').css('left', ($(window).width()/2-90)+'px');
   $('#view .cactus').css('height', (cactusheight)+'px');
+  $('#view .accesories').css('height', (cactusheight+123+100)+'px');
   $('#accesories>div').css('height', ($(window).height()-50)+'px');
   
   $('#thoughtsarea').css('bottom', (125+cactusheight)+'px');
