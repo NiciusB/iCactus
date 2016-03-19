@@ -65,8 +65,12 @@ html, body {
     background-position-y: 100%;
 }
 #humiditymeter {
-    text-align: center;
-    font-size: 2em;
+    background: url('../img/humidityframe.png') no-repeat 50% 0px;
+    height: 44px;
+}
+#mark {
+    background: url('../img/humiditybar.png') no-repeat 50% 4px;
+    height: 18px;
 }
 #thoughts {
     color: #666;
