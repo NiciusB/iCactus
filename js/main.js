@@ -28,7 +28,6 @@ $(document).ready(function() {
   });
   setInterval("cactus.computeUpdate()", 30000);
   $(window).on('resize', function(e) {windowResize()});
-  setTimeout("windowResize()", 5);
 });
 var windowResize=function() {
   switch(cactus.cactus) {
@@ -75,6 +74,7 @@ Cactus.prototype.updateUI=function() {
       this.age= 0;
       this.humidity= 15;
       this.updateLastUpdated();
+      windowResize();
       this.updateUI();
       $('#thoughts').html('Watering increases the humidity. Don\'t let it dry, but don\'t drown it. Humidity decreases a little bit each day');
     }
