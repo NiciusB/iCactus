@@ -131,18 +131,24 @@ Cactus.prototype.updateLastUpdated = function() {
 };
 Cactus.prototype.getRandomWateringThought = function() {
   var thoughts=[
-  'yay yay yay',
-  'yaayyy',
-  ':D',
-  'hehehe!!!'
+  'Where can one go to the toilet around here?',
+  'HALLELUJAH',
+  'I\'m so happy I could die',
+  'I can\'t believe you\'re actually paying attention to me',
+  'How you dooooin\'?',
+  'KEEP IT COMING. <br> Wait, no, don\'t do that',
   ];
   return thoughts[Math.floor(Math.random()*thoughts.length)];
 };
 Cactus.prototype.getRandomThought = function() {
   var thoughts=[
-  'I liek trains',
-  'BIG THINGS',
-  'Thug life yo'
+  'I think this accupunture is really working!',
+  'Mo\' Water Mo\' Problems',
+  'Are you really that bored?',
+  'I love you',
+  'I have a drinking problem',
+  'Green is not a creative colour',
+  'Wow, this art really sucks',
   ];
   return thoughts[Math.floor(Math.random()*thoughts.length)];
 };
