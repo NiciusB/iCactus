@@ -38,9 +38,27 @@ html, body {
     text-align: center;
     margin-top: 10px;
 }
-.preview {
+/////////////////////////////////////////////
+.preview, #view .flowerpot, #view .cactus {
     width: 20em;
     height: 20em;
     margin: 0 auto;
     background-size: cover;
+}
+//////////////////////////////////////////////
+#humiditymeter {
+    text-align: center;
+    font-size: 2em;
+}
+#thoughts {
+    color: #666;
+    position: absolute;
+    right: 1em;
+    top: 3em;
+}
+#age {
+    position: absolute;
+    left: 1em;
+    top: 3em;
+    font-size: 5em;
 }
