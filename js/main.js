@@ -27,6 +27,10 @@ $(function() {
       $('#thoughts').html(cactus.getRandomWateringThought());
   });
   setInterval("cactus.computeUpdate()", 30000);
+  $(window).on('resize', function(){
+      $('#view .cactus').css('background-position-y', 'calc(100% - '+($('#view .cactus').width()-80)+'px)')
+  });
+  $(window).resize();
 });
 var Cactus=function() {this.initialize()};
 Cactus.prototype.initialize=function() {
