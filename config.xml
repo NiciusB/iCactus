@@ -12,6 +12,11 @@
     <author href="https://thumblife.ga" email="support@thumblife.ga">
         Thumblife 
     </author>
+
     <icon src="icon.png" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />   
 
 </widget>
