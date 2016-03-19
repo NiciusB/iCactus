@@ -5,7 +5,7 @@ $(function() {
   if(cactus==undefined) {
     cactus=new Cactus();
   }
-  cactus.update();
+  cactus.computeUpdate();
   
   $('#welcome .next, #welcome .previous').click(function(){
       var ischangingcactus=$(this).parent().is($('#welcomecactus'));
@@ -25,7 +25,7 @@ $(function() {
   });
   $('#view>div').click(function(){
       cactus.humidity+=25;
-      cactus.update();
+      cactus.computeUpdate();
       $('#thoughts').html(cactus.getRandomWateringThought());
       $('#view').fadeOut(200, function() { $(this).fadeIn(200); });
   });
@@ -71,7 +71,7 @@ Cactus.prototype.updateUI=function() {
     $('#thoughts').html(cactus.getRandomThought());
   }
 };
-Cactus.prototype.update = function() {
+Cactus.prototype.computeUpdate = function() {
   var delta=Math.floor(new Date()/1000)-this.lastupdated;
   Cactus.prototype.updateLastUpdated();
   this.humidity-=delta*25/7/24/60/60;
