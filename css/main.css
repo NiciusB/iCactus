@@ -97,6 +97,7 @@ center {
     overflow: hidden;
     width: 292px;
     margin: 0 auto;
+	background: #E2E2E2;
 }
 #mark>div {
     background: url('../img/humiditybar.png') no-repeat 50% 4px;
