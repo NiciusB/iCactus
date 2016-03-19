@@ -51,7 +51,7 @@ html, body {
     margin: 0 auto;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: 0;
+    background-position-x: 50%;
 }
 /* game */
 #view {
