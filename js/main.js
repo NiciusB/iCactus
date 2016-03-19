@@ -72,9 +72,6 @@ Cactus.prototype.updateUI=function() {
 Cactus.prototype.updateLastUpdated = function() {
   this.lastupdated=Math.floor(new Date()/1000);
 };
-Cactus.prototype.save = function() {
-  $.jStorage.set("game", this);
-};
 Cactus.prototype.getRandomWateringThought = function() {
   var thoughts=[
   'yay yay yay',
@@ -84,7 +81,6 @@ Cactus.prototype.getRandomWateringThought = function() {
   ];
   return thoughts[Math.floor(Math.random()*thoughts.length)];
 };
-
 Cactus.prototype.getRandomThought = function() {
   var thoughts=[
   'I liek trains',
@@ -92,4 +88,7 @@ Cactus.prototype.getRandomThought = function() {
   'Thug life yo'
   ];
   return thoughts[Math.floor(Math.random()*thoughts.length)];
+};
+Cactus.prototype.save = function() {
+  $.jStorage.set("game", this);
 };
