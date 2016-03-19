@@ -27,6 +27,7 @@ $(function() {
       $('#thoughts').html(cactus.getRandomWateringThought());
       $('#view').fadeOut(200, function() { $(this).fadeIn(200); });
   });
+  setInterval(cactus.computeUpdate, 1000);
 });
 var Cactus=function() {this.initialize()};
 Cactus.prototype.initialize=function() {
