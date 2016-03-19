@@ -1,7 +1,7 @@
 var cactus;
 $(function() {
   cactus = new Cactus();
-  var maxcactusid=2, maxflowerpotsid=2;
+  var maxcactusid=3, maxflowerpotsid=3;
   cactus.load();
   cactus.computeUpdate();
   
