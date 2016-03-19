@@ -44,7 +44,9 @@ html, body {
     width: 20em;
     height: 20em;
     margin: 0 auto;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 /* game */
 #view {
