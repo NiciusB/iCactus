@@ -47,8 +47,8 @@ html, body {
 }
 /* mixed */
 .preview, #view .flowerpot, #view .cactus {
-    width: 20em;
-    height: 20em;
+    width: 70%;
+    height: 50%;
     margin: 0 auto;
     background-size: contain;
     background-repeat: no-repeat;
@@ -57,7 +57,7 @@ html, body {
 /* game */
 #view {
     overflow: auto;
-    width: 20em;
+    width: 70%;
     margin: 0 auto;
 }
 #view .flowerpot, #view .cactus {
