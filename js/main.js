@@ -18,7 +18,10 @@ $(document).ready(function() {
   $('#welcome .done').click(function(){
       var ischangingcactus=$(this).parent().parent().is($('#welcomecactus'));
       var thisid=parseInt($(this).parent().parent().find('.preview').attr('data-id'));
-      if(ischangingcactus) cactus.cactus=thisid; else cactus.flowerpot=thisid;
+      if(ischangingcactus) {
+        cactus.cactus=thisid;
+        windowResize();
+      } else cactus.flowerpot=thisid;
       cactus.updateUI();
   });
   $('#view>div').click(function(){
@@ -75,7 +78,6 @@ Cactus.prototype.updateUI=function() {
       this.age= 0;
       this.humidity= 15;
       this.updateLastUpdated();
-      windowResize();
       this.updateUI();
       $('#thoughts').html('Watering increases the humidity. Don\'t let it dry, but don\'t drown it. Humidity decreases a little bit each day');
     }
