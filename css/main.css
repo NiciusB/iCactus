@@ -10,7 +10,10 @@ html, body {
 #welcome, #body, #welcomecactus, #welcomeflowerpot {
     display: none;
     position: absolute;
-    top:0;left:0;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
 }
 .title {
     width: 100%;
