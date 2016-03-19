@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Ubuntu';
-  src: url('Ubuntu-Regular.ttf');
+  font-family: 'Sniglet';
+  src: url('../fonts/Sniglet-ExtraBold.ttf');
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -12,7 +12,7 @@ html, body {
     padding:0;
     color: #222;
     background: #EEE;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Sniglet', sans-serif;
 }
 /* welcome */
 .title {
@@ -107,6 +107,9 @@ center {
 #thoughts {
     color: #666;
     position: absolute;
+    background: white url('../img/thoughts.png');
+    border-radius: 5px;
+    padding: 2px;
     width: 40%;
     right: 10px;
     top: 70px;

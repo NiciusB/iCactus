@@ -95,16 +95,17 @@ Cactus.prototype.updateUI=function() {
       this.humidity= 15;
       this.updateLastUpdated();
       this.updateUI();
-      $('#thoughts').html('Watering increases the humidity. Don\'t let it dry, but don\'t drown it. Humidity decreases a little bit each day');
+      $('#thoughts').html('Watering increases the humidity. Don\'t let it dry, but don\'t drown it. Humidity decreases a little bit each day').stop(true, true).fadeIn(500);
     }
   } else {
     $('#welcome').stop(true, true).fadeOut(500);
     $('#game').stop(true, true).fadeIn(500);
-    $('#mark>div').animate({'width': this.humidity+'%'}, 750);
+    $('#mark>div').stop(true, true).animate({'width': this.humidity+'%'}, 750);
     $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
     $('#view .flowerpot').css('background-image', 'url(img/flowerpots/'+this.flowerpot+'.png)');
     $('#age').html('Age: '+Math.floor(this.age)+' days');
-    $('#thoughts').html(cactus.getRandomThought());
+    $('#thoughts').stop(true, true).fadeIn(500).html(cactus.getRandomThought());
+	setTimeout("$('#thoughts').stop(true, true).fadeOut(500)", 10000);
   }
 };
 Cactus.prototype.kill = function() {
