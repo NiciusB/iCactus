@@ -56,6 +56,7 @@ html, body {
 }
 #view .flowerpot, #view .cactus {
     position: absolute;
+    height: 37em;
 }
 #view .cactus {
     background-position-y: calc(100% - 220px);
