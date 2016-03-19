@@ -71,10 +71,10 @@ Cactus.prototype.updateUI=function() {
   } else {
     $('#welcome').fadeOut(500);
     $('#game').fadeIn(500);
-    $('#humiditymeter .mark').html(this.humidity+'%');
+    $('#humiditymeter .mark').html(Math.round(this.humidity*100)/100+'%');
     $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
     $('#view .flowerpot').css('background-image', 'url(img/flowerpot/'+this.flowerpot+'.png)');
-    $('#age').html(this.age+' days');
+    $('#age').html(Math.floor(this.age)+' days');
     $('#thoughts').html(cactus.getRandomThought());
   }
 };
