@@ -15,9 +15,8 @@ $(function() {
       $(this).parent().find('.preview').css('background-image', 'url(img/cactus/'+thisid+'.png)');
   });
   $('#welcome .done').click(function(){
-      var ischangingcactus=$(this).parent()==$('#welcomecactus');
-      console.log($(this).parent());
-      var thisid=parseInt($(this).parent().find('.preview').attr('data-id'));
+      var ischangingcactus=$(this).parent().parent()==$('#welcomecactus');
+      var thisid=parseInt($(this).parent().parent().find('.preview').attr('data-id'));
       if(ischangingcactus) cactus.cactus=thisid; else cactus.flowerpot=thisid;
       cactus.updateUI();
   });
