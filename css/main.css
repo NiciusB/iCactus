@@ -5,7 +5,6 @@
 * {
   -webkit-tap-highlight-color: transparent;
 }
-}
 html, body {
     margin:0;
     padding:0;
@@ -89,13 +88,13 @@ html, body {
 #thoughts {
     color: #666;
     position: absolute;
-    width: 9em;
-    right: 1em;
-    top: 3em;
+    width: 40%;
+    right: 10px;
+    top: 70px;
 }
 #age {
     position: absolute;
     left: 10px;
-    top: 10px;
-    font-size: 3em;
+    top: 50px;
+    font-size: 1.1em;
 }
