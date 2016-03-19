@@ -53,8 +53,8 @@ Cactus.prototype.updateUI=function() {
     $('#welcome').fadeOut(500);
     $('#game').fadeIn(500);
     $('#humiditymeter .mark').html(this.humidity);
-    $('#cactus .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
-    $('#cactus .flowerpot').css('background-image', 'url(img/cactus/'+this.flowerpot+'.png)');
+    $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
+    $('#view .flowerpot').css('background-image', 'url(img/cactus/'+this.flowerpot+'.png)');
     $('#age').html(this.age+' days');
     
   }
