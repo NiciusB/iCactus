@@ -1,9 +1,18 @@
 $(function() {
   var cactus = $.jStorage.get('game');
+  var maxcactusid=2, maxflowerpotsid=2;
   if(cactus==undefined) {
     cactus=new Cactus();
   }
   cactus.updateUI();
+  
+  $('#welcome .next, #welcome .previous').click(function()  {
+      var ischangingcactus=$(this).parent()==$('#welcomecactus');
+      var thisid=parseInt($(this).parent().find('.preview').attr('data-id'))+1;
+      if((ischangingcactus && thisid>maxcactusid) || (!ischangingcactus && thisid>maxflowerpotsid)) thisid=1;
+      $(this).parent().find('.preview').attr('data-id', thisid);
+      $(this).parent().find('.preview').css('background-image', 'url(img/cactus/'+thisid+'.png)');
+  });
 });
 var Cactus=function() {
       this.alive= false;
@@ -18,10 +27,14 @@ Cactus.prototype.updateUI=function() {
       $('#welcome>div').fadeOut(500);
       $('#welcome #welcomecactus').fadeIn(500);
       $('#welcome #welcomecactus .title').html('Select your cactus!');
+      $('#welcome #welcomecactus .preview').css('background-image', 'url(img/cactus/1.png)');
+      $('#welcome #welcomecactus .preview').attr('data-id', '1');
     } else if(this.flowerpot==-1) {
       $('#welcome>div').fadeOut(500);
       $('#welcome #welcomeflowerpot').fadeIn(500);
       $('#welcome #welcomeflowerpot .title').html('Select your flower pot!');
+      $('#welcome #welcomeflowerpot .preview').css('background-image', 'url(img/cactus/1.png)');
+      $('#welcome #welcomeflowerpot .preview').attr('data-id', '1');
     } else {
       this.alive= true;
       this.age= 0;
