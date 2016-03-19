@@ -13,7 +13,7 @@ $(function() {
       if(ischangingcactus)
       $(this).parent().find('.preview').css('background-image', 'url(img/cactus/'+thisid+'.png)');
       else
-      $(this).parent().find('.preview').css('background-image', 'url(img/flowerpot/'+thisid+'.png)');
+      $(this).parent().find('.preview').css('background-image', 'url(img/flowerpots/'+thisid+'.png)');
   });
   $('#welcome .done').click(function(){
       var ischangingcactus=$(this).parent().parent().is($('#welcomecactus'));
@@ -58,7 +58,7 @@ Cactus.prototype.updateUI=function() {
       $('#welcome>div').stop(true, true).fadeOut(500);
       $('#welcome #welcomeflowerpot').fadeIn(500);
       $('#welcome #welcomeflowerpot .title').html('Select your flower pot!');
-      $('#welcome #welcomeflowerpot .preview').css('background-image', 'url(img/cactus/1.png)');
+      $('#welcome #welcomeflowerpot .preview').css('background-image', 'url(img/flowerpots/1.png)');
       $('#welcome #welcomeflowerpot .preview').attr('data-id', '1');
     } else {
       this.alive= true;
@@ -73,7 +73,7 @@ Cactus.prototype.updateUI=function() {
     $('#game').stop(true, true).fadeIn(500);
     $('#humiditymeter .mark').html(Math.round(this.humidity*100)/100+'%');
     $('#view .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
-    $('#view .flowerpot').css('background-image', 'url(img/flowerpot/'+this.flowerpot+'.png)');
+    $('#view .flowerpot').css('background-image', 'url(img/flowerpots/'+this.flowerpot+'.png)');
     $('#age').html(Math.floor(this.age)+' days');
     $('#thoughts').html(cactus.getRandomThought());
   }
