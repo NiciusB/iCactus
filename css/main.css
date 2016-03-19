@@ -45,6 +45,9 @@ html, body {
     margin-top: 10px;
 }
 /* mixed */
+.preview {
+    background-position-y: 50%;
+}
 .preview, #view .flowerpot, #view .cactus {
     width: 70%;
     max-width: 180px;
