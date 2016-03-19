@@ -30,7 +30,7 @@ Cactus.prototype.updateUI=function() {
       this.updateUI();
     }
   } else {
-    $('#welcome').fadeOut(500;
+    $('#welcome').fadeOut(500);
     $('#game').fadeIn(500);
     $('#humiditymeter .mark').html(this.humidity);
     $('#cactus .cactus').css('background-image', 'url(img/cactus/'+this.cactus+'.png)');
