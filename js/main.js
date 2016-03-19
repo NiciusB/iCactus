@@ -46,7 +46,7 @@ $(document).ready(function() {
       $('#thoughts').html(cactus.getRandomWateringThought());
 	  for(k=0;k<20;k++) {
 		  var y=Math.random()*40-40;
-		 $('<div class="drop"><i class="fa fa-tint"></i></div>').appendTo('#view').css('left', ($(window).width()/2-65+130*Math.random())+'px').css('top', y+'%')
+		 $('<div class="drop"><i class="fa fa-tint"></i></div>').appendTo('#view').css('left', ($(window).width()/2-60+115*Math.random())+'px').css('top', y+'%')
 		 .animate({'top': (150+y)+'%'}, 2000,"linear",function(){$(this).remove();});
 	  }
 	  });
@@ -64,6 +64,7 @@ var windowResize=function() {
     case 3: var hardcodedheight=193; break;
   }
   $('#view .cactus').css('background-position-y', ($(window).height()-hardcodedheight)+'px');
+  $('#thoughtsarea').css('right', ($(window).width()/2-300)+'px');
 };
 var Cactus=function() {this.initialize()};
 Cactus.prototype.initialize=function() {
