@@ -16,6 +16,7 @@ $(function() {
   });
   $('#welcome .done').click(function(){
       var ischangingcactus=$(this).parent()==$('#welcomecactus');
+      console.log($(this).parent());
       var thisid=parseInt($(this).parent().find('.preview').attr('data-id'));
       if(ischangingcactus) cactus.cactus=thisid; else cactus.flowerpot=thisid;
       cactus.updateUI();
