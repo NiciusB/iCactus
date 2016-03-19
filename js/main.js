@@ -36,6 +36,14 @@ Cactus.prototype.initialize=function() {
       this.cactus= -1;
       this.flowerpot= -1;
 };
+Cactus.prototype.computeUpdate=function() {
+  var delta=Math.floor(new Date()/1000)-this.lastupdated;
+  Cactus.prototype.updateLastUpdated();
+  this.humidity-=delta*25/7/24/60/60;
+  if(this.humidity<0) this.kill();
+  else if(this.humidity>200) this.kill();
+  this.updateUI();
+};
 Cactus.prototype.updateUI=function() {
   this.save();
   if(!this.alive) {
@@ -70,14 +78,6 @@ Cactus.prototype.updateUI=function() {
     $('#age').html(this.age+' days');
     $('#thoughts').html(cactus.getRandomThought());
   }
-};
-Cactus.prototype.computeUpdate = function() {
-  var delta=Math.floor(new Date()/1000)-this.lastupdated;
-  Cactus.prototype.updateLastUpdated();
-  this.humidity-=delta*25/7/24/60/60;
-  if(this.humidity<0) this.kill();
-  else if(this.humidity>200) this.kill();
-  this.updateUI();
 };
 Cactus.prototype.kill = function() {
   this.initialize();
