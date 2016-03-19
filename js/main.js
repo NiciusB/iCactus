@@ -31,7 +31,7 @@ $(document).ready(function() {
   setTimeout("windowResize()", 5);
 });
 var windowResize=function() {
-  $('#view .cactus').css('background-position-y', 'calc(100% - '+($('#view .cactus').width()*0.65)+'px)');
+  $('#view .cactus').css('background-position-y', ($('#view .cactus').height()-$('#view .cactus').width()*0.65)+'px');
 };
 var Cactus=function() {this.initialize()};
 Cactus.prototype.initialize=function() {
