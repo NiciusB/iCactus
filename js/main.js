@@ -28,7 +28,7 @@ $(function() {
   });
   setInterval("cactus.computeUpdate()", 30000);
   $(window).on('resize', function(){
-      $('#view .cactus').css('background-position-y', 'calc(100% - '+($('#view .cactus').width()-80)+'px)')
+      $('#view .cactus').css('background-position-y', 'calc(100% - '+($('#view .cactus').width()*0.65)+'px)')
   });
   $(window).resize();
 });
